@@ -1,8 +1,27 @@
-import React from 'react';
+import React, { Component } from 'react';
 import './snake.css';
 
-const Snake = () => (
-  <div className="snake" />
-);
+export default class Snake extends Component {
+  constructor(props) {
+    super(props);
+    this.handleKeyDown = this.handleKeyDown.bind(this);
+  }
+  componentDidMount() {
+    /* global window */
+    window.addEventListener('keydown', this.handleKeyDown);
+  }
 
-export default Snake;
+  componentWillUnmount() {
+    /* global window */
+    window.removeEventListener('keydown', this.handleKeyDown);
+  }
+
+  handleKeyDown = (event) => {
+    console.log(event)
+  }
+  render() {
+    return (
+      <div className="snake" />
+    );
+  }
+}

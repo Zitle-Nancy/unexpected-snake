@@ -3,7 +3,7 @@ import './puntuation.css';
 
 const puntuation = () => (
   <article>
-    <p> Puntuación </p>
+    <span> Puntuación </span>
   </article>
 );
 

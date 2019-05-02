@@ -20,19 +20,24 @@ export default class Snake extends Component {
     window.removeEventListener('keydown', this.handleKeyDown);
   }
 
-
   handleKeyDown = (event) => {
 
     let keyCode = event.keyCode;
     
-    console.log(event)
+    // console.log(event)
     let contador = 0;
     const snake = document.querySelector('.snake');
-    
+    const { x } = snake.getBoundingClientRect();
     if(keyCode === 39){
       handleEvent = setInterval(()=>{
         contador++;
-        snake.style.marginLeft = `${contador*10}px`;
+        snake.style.left = `${contador*10}px`;
+      },100)
+    }
+    if(keyCode === 40){
+      handleEvent = setInterval(()=>{
+        contador++;
+        snake.style.top = `${contador*10}px`;
       },100)
     }
     if(keyCode === 32){
@@ -40,8 +45,13 @@ export default class Snake extends Component {
     }
   }
   render() {
+    const { width, height, currentCell} = this.props;
+    console.log(currentCell);
+    console.log(currentCell)
     return (
-      <div className="snake" />
+      <div className="snake"
+        style={{ 'width': width, 'height': height }}
+      />
     );
   }
 }

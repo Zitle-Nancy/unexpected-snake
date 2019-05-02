@@ -1,7 +1,8 @@
 article {
-  width: 30%;
+  width: 25%;
   height: 100vh;
   box-sizing: border-box;
   display: inline-block;
   border: solid red 10px;
+  position: absolute;
 }

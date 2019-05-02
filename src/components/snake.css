@@ -1,6 +1,10 @@
 .snake {
-  width: 15px;
-  height: 15px;
-  background-color: #303952;
+  /* width: 15px;
+  height: 15px; */
+  background-color: black;
   display: inline-block;
+  /* position: absolute;
+  left: 10px;
+  right: 0;
+  top: 10px; */
 }
